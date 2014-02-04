@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAE6ABA218A121F1008E50F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA118A121F1008E50F1 /* Foundation.framework */; };
+		BAE6ABA418A121F1008E50F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA318A121F1008E50F1 /* CoreGraphics.framework */; };
+		BAE6ABA618A121F1008E50F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA518A121F1008E50F1 /* UIKit.framework */; };
+		BAE6ABAC18A121F1008E50F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAE6ABAA18A121F1008E50F1 /* InfoPlist.strings */; };
+		BAE6ABAE18A121F1008E50F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6ABAD18A121F1008E50F1 /* main.m */; };
+		BAE6ABB218A121F1008E50F1 /* HWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6ABB118A121F1008E50F1 /* HWAppDelegate.m */; };
+		BAE6ABB518A121F1008E50F1 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE6ABB318A121F1008E50F1 /* Main_iPhone.storyboard */; };
+		BAE6ABB818A121F1008E50F1 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAE6ABB618A121F1008E50F1 /* Main_iPad.storyboard */; };
+		BAE6ABBB18A121F1008E50F1 /* HWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6ABBA18A121F1008E50F1 /* HWViewController.m */; };
+		BAE6ABBD18A121F1008E50F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAE6ABBC18A121F1008E50F1 /* Images.xcassets */; };
+		BAE6ABC418A121F1008E50F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABC318A121F1008E50F1 /* XCTest.framework */; };
+		BAE6ABC518A121F1008E50F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA118A121F1008E50F1 /* Foundation.framework */; };
+		BAE6ABC618A121F1008E50F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA518A121F1008E50F1 /* UIKit.framework */; };
+		BAE6ABCE18A121F1008E50F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAE6ABCC18A121F1008E50F1 /* InfoPlist.strings */; };
+		BAE6ABD018A121F1008E50F1 /* ImageDownloadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6ABCF18A121F1008E50F1 /* ImageDownloadTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAE6ABC718A121F1008E50F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAE6AB9618A121F1008E50F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAE6AB9D18A121F1008E50F1;
+			remoteInfo = ImageDownload;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAE6AB9E18A121F1008E50F1 /* ImageDownload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDownload.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE6ABA118A121F1008E50F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BAE6ABA318A121F1008E50F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BAE6ABA518A121F1008E50F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BAE6ABA918A121F1008E50F1 /* ImageDownload-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageDownload-Info.plist"; sourceTree = "<group>"; };
+		BAE6ABAB18A121F1008E50F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BAE6ABAD18A121F1008E50F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAE6ABAF18A121F1008E50F1 /* ImageDownload-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageDownload-Prefix.pch"; sourceTree = "<group>"; };
+		BAE6ABB018A121F1008E50F1 /* HWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAppDelegate.h; sourceTree = "<group>"; };
+		BAE6ABB118A121F1008E50F1 /* HWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWAppDelegate.m; sourceTree = "<group>"; };
+		BAE6ABB418A121F1008E50F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		BAE6ABB718A121F1008E50F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		BAE6ABB918A121F1008E50F1 /* HWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWViewController.h; sourceTree = "<group>"; };
+		BAE6ABBA18A121F1008E50F1 /* HWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWViewController.m; sourceTree = "<group>"; };
+		BAE6ABBC18A121F1008E50F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAE6ABC218A121F1008E50F1 /* ImageDownloadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageDownloadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE6ABC318A121F1008E50F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BAE6ABCB18A121F1008E50F1 /* ImageDownloadTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageDownloadTests-Info.plist"; sourceTree = "<group>"; };
+		BAE6ABCD18A121F1008E50F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BAE6ABCF18A121F1008E50F1 /* ImageDownloadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAE6AB9B18A121F1008E50F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE6ABA418A121F1008E50F1 /* CoreGraphics.framework in Frameworks */,
+				BAE6ABA618A121F1008E50F1 /* UIKit.framework in Frameworks */,
+				BAE6ABA218A121F1008E50F1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE6ABBF18A121F1008E50F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE6ABC418A121F1008E50F1 /* XCTest.framework in Frameworks */,
+				BAE6ABC618A121F1008E50F1 /* UIKit.framework in Frameworks */,
+				BAE6ABC518A121F1008E50F1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAE6AB9518A121F1008E50F1 = {
+			isa = PBXGroup;
+			children = (
+				BAE6ABA718A121F1008E50F1 /* ImageDownload */,
+				BAE6ABC918A121F1008E50F1 /* ImageDownloadTests */,
+				BAE6ABA018A121F1008E50F1 /* Frameworks */,
+				BAE6AB9F18A121F1008E50F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAE6AB9F18A121F1008E50F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAE6AB9E18A121F1008E50F1 /* ImageDownload.app */,
+				BAE6ABC218A121F1008E50F1 /* ImageDownloadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAE6ABA018A121F1008E50F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAE6ABA118A121F1008E50F1 /* Foundation.framework */,
+				BAE6ABA318A121F1008E50F1 /* CoreGraphics.framework */,
+				BAE6ABA518A121F1008E50F1 /* UIKit.framework */,
+				BAE6ABC318A121F1008E50F1 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAE6ABA718A121F1008E50F1 /* ImageDownload */ = {
+			isa = PBXGroup;
+			children = (
+				BAE6ABB018A121F1008E50F1 /* HWAppDelegate.h */,
+				BAE6ABB118A121F1008E50F1 /* HWAppDelegate.m */,
+				BAE6ABB318A121F1008E50F1 /* Main_iPhone.storyboard */,
+				BAE6ABB618A121F1008E50F1 /* Main_iPad.storyboard */,
+				BAE6ABB918A121F1008E50F1 /* HWViewController.h */,
+				BAE6ABBA18A121F1008E50F1 /* HWViewController.m */,
+				BAE6ABBC18A121F1008E50F1 /* Images.xcassets */,
+				BAE6ABA818A121F1008E50F1 /* Supporting Files */,
+			);
+			path = ImageDownload;
+			sourceTree = "<group>";
+		};
+		BAE6ABA818A121F1008E50F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAE6ABA918A121F1008E50F1 /* ImageDownload-Info.plist */,
+				BAE6ABAA18A121F1008E50F1 /* InfoPlist.strings */,
+				BAE6ABAD18A121F1008E50F1 /* main.m */,
+				BAE6ABAF18A121F1008E50F1 /* ImageDownload-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAE6ABC918A121F1008E50F1 /* ImageDownloadTests */ = {
+			isa = PBXGroup;
+			children = (
+				BAE6ABCF18A121F1008E50F1 /* ImageDownloadTests.m */,
+				BAE6ABCA18A121F1008E50F1 /* Supporting Files */,
+			);
+			path = ImageDownloadTests;
+			sourceTree = "<group>";
+		};
+		BAE6ABCA18A121F1008E50F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAE6ABCB18A121F1008E50F1 /* ImageDownloadTests-Info.plist */,
+				BAE6ABCC18A121F1008E50F1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAE6AB9D18A121F1008E50F1 /* ImageDownload */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAE6ABD318A121F1008E50F1 /* Build configuration list for PBXNativeTarget "ImageDownload" */;
+			buildPhases = (
+				BAE6AB9A18A121F1008E50F1 /* Sources */,
+				BAE6AB9B18A121F1008E50F1 /* Frameworks */,
+				BAE6AB9C18A121F1008E50F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageDownload;
+			productName = ImageDownload;
+			productReference = BAE6AB9E18A121F1008E50F1 /* ImageDownload.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAE6ABC118A121F1008E50F1 /* ImageDownloadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAE6ABD618A121F1008E50F1 /* Build configuration list for PBXNativeTarget "ImageDownloadTests" */;
+			buildPhases = (
+				BAE6ABBE18A121F1008E50F1 /* Sources */,
+				BAE6ABBF18A121F1008E50F1 /* Frameworks */,
+				BAE6ABC018A121F1008E50F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAE6ABC818A121F1008E50F1 /* PBXTargetDependency */,
+			);
+			name = ImageDownloadTests;
+			productName = ImageDownloadTests;
+			productReference = BAE6ABC218A121F1008E50F1 /* ImageDownloadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAE6AB9618A121F1008E50F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HW;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Kenji SHIMIZU";
+				TargetAttributes = {
+					BAE6ABC118A121F1008E50F1 = {
+						TestTargetID = BAE6AB9D18A121F1008E50F1;
+					};
+				};
+			};
+			buildConfigurationList = BAE6AB9918A121F1008E50F1 /* Build configuration list for PBXProject "ImageDownload" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAE6AB9518A121F1008E50F1;
+			productRefGroup = BAE6AB9F18A121F1008E50F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAE6AB9D18A121F1008E50F1 /* ImageDownload */,
+				BAE6ABC118A121F1008E50F1 /* ImageDownloadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAE6AB9C18A121F1008E50F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE6ABB818A121F1008E50F1 /* Main_iPad.storyboard in Resources */,
+				BAE6ABBD18A121F1008E50F1 /* Images.xcassets in Resources */,
+				BAE6ABB518A121F1008E50F1 /* Main_iPhone.storyboard in Resources */,
+				BAE6ABAC18A121F1008E50F1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE6ABC018A121F1008E50F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE6ABCE18A121F1008E50F1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAE6AB9A18A121F1008E50F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE6ABBB18A121F1008E50F1 /* HWViewController.m in Sources */,
+				BAE6ABAE18A121F1008E50F1 /* main.m in Sources */,
+				BAE6ABB218A121F1008E50F1 /* HWAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAE6ABBE18A121F1008E50F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE6ABD018A121F1008E50F1 /* ImageDownloadTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAE6ABC818A121F1008E50F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAE6AB9D18A121F1008E50F1 /* ImageDownload */;
+			targetProxy = BAE6ABC718A121F1008E50F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BAE6ABAA18A121F1008E50F1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAE6ABAB18A121F1008E50F1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BAE6ABB318A121F1008E50F1 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAE6ABB418A121F1008E50F1 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		BAE6ABB618A121F1008E50F1 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAE6ABB718A121F1008E50F1 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		BAE6ABCC18A121F1008E50F1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAE6ABCD18A121F1008E50F1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAE6ABD118A121F1008E50F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BAE6ABD218A121F1008E50F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAE6ABD418A121F1008E50F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageDownload/ImageDownload-Prefix.pch";
+				INFOPLIST_FILE = "ImageDownload/ImageDownload-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BAE6ABD518A121F1008E50F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageDownload/ImageDownload-Prefix.pch";
+				INFOPLIST_FILE = "ImageDownload/ImageDownload-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BAE6ABD718A121F1008E50F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImageDownload.app/ImageDownload";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageDownload/ImageDownload-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ImageDownloadTests/ImageDownloadTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BAE6ABD818A121F1008E50F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ImageDownload.app/ImageDownload";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageDownload/ImageDownload-Prefix.pch";
+				INFOPLIST_FILE = "ImageDownloadTests/ImageDownloadTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAE6AB9918A121F1008E50F1 /* Build configuration list for PBXProject "ImageDownload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE6ABD118A121F1008E50F1 /* Debug */,
+				BAE6ABD218A121F1008E50F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAE6ABD318A121F1008E50F1 /* Build configuration list for PBXNativeTarget "ImageDownload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE6ABD418A121F1008E50F1 /* Debug */,
+				BAE6ABD518A121F1008E50F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAE6ABD618A121F1008E50F1 /* Build configuration list for PBXNativeTarget "ImageDownloadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAE6ABD718A121F1008E50F1 /* Debug */,
+				BAE6ABD818A121F1008E50F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BAE6AB9618A121F1008E50F1 /* Project object */;
+}
