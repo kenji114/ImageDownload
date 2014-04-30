@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *URLname;
 @property (weak, nonatomic) IBOutlet UITextField *tryNum;
 @property (weak, nonatomic) IBOutlet UITextField *Interval;
+@property (weak, nonatomic) IBOutlet UITextField *calcRes;
+
 @property (weak, nonatomic) IBOutlet UILabel *downOrUp;
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
@@ -30,6 +32,7 @@ int64_t fileSize = 0;
 unsigned int ntryMax = 1;
 unsigned int ntry = 0;
 unsigned int tryCount = 0;
+float resolution = 1.0;
 NSFileHandle *fileHandle = nil;
 
 @implementation HWViewController
@@ -39,6 +42,7 @@ NSFileHandle *fileHandle = nil;
     _URLname.text = @"http://www.kiriko-sandblast.com/10MB.bin";
     _tryNum.text = @"1";
     _Interval.text = @"1";
+    _calcRes.text = @"1.0";
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -69,13 +73,14 @@ NSFileHandle *fileHandle = nil;
     NSLog(@"URLは、%@", _URLname.text);
     NSLog(@"繰り返し回数は、%@", _tryNum.text);
     NSLog(@"繰り返し間隔は、%@", _Interval.text);
+    NSLog(@"解像度は、%@", _calcRes.text);
     
     ntryMax = [_tryNum.text intValue];
     ntry = 0;
     tryCount = ntryMax;
     lastBytesWritten = 0;
     fileSize = 0;
-    
+    resolution = [_calcRes.text floatValue];
     
     NSString *currData = [self getCurrentDataString];
     NSString *filename = [NSString stringWithFormat:@"/Documents/%@.txt",currData];
@@ -165,10 +170,16 @@ NSFileHandle *fileHandle = nil;
     
     float percent = (float)totalBytesWritten / (float)totalBytesExpectedToWrite;
     float insRate = (float)(totalBytesWritten - lastBytesWritten)/(float)interval;
+
+/** debug start **/
+//    int64_t receivedSize = totalBytesWritten - lastBytesWritten;
+//    NSLog(@"--%@-- --%lld--", [self getCurrentDataString], receivedSize);
+/** debug end **/
+    
     fileSize = totalBytesExpectedToWrite;
     _progressView.progress = percent;
     
-    if (interval > 0.001) {
+    if (interval > resolution) {
 
         _percentView.text = [NSString stringWithFormat:@"%2.1f  %%",percent*100];
         _instantRateView.text = [NSString stringWithFormat:@"%3.1f kbps",insRate/1000];
@@ -183,7 +194,8 @@ NSFileHandle *fileHandle = nil;
         
         lastTime = currTime;
         lastBytesWritten = totalBytesWritten;
-   }
+    }
+   
 }
 
 // Delegateタスク
