@@ -166,10 +166,10 @@ NSFileHandle *fileHandle = nil;
     
     currTime = [NSDate date];
     
-    float interval = [currTime timeIntervalSinceDate:lastTime];
+//    float interval = [currTime timeIntervalSinceDate:lastTime];
     
     float percent = (float)totalBytesWritten / (float)totalBytesExpectedToWrite;
-    float insRate = (float)(totalBytesWritten - lastBytesWritten)/(float)interval;
+//    float insRate = (float)(totalBytesWritten - lastBytesWritten)/(float)interval;
 
 /** debug start **/
 //    int64_t receivedSize = totalBytesWritten - lastBytesWritten;
@@ -179,22 +179,22 @@ NSFileHandle *fileHandle = nil;
     fileSize = totalBytesExpectedToWrite;
     _progressView.progress = percent;
     
-    if (interval > resolution) {
+//    if (interval > resolution) {
 
-        _percentView.text = [NSString stringWithFormat:@"%2.1f  %%",percent*100];
-        _instantRateView.text = [NSString stringWithFormat:@"%3.1f kbps",insRate/1000];
+//        _percentView.text = [NSString stringWithFormat:@"%2.1f  %%",percent*100];
+//        _instantRateView.text = [NSString stringWithFormat:@"%3.1f kbps",insRate/1000];
         
-        NSString *writeLine1 = [NSString stringWithFormat:@"%@, %@, %@\n", [self getCurrentDataString], _percentView.text, _instantRateView.text];
-        NSData *data1 = [NSData dataWithBytes:writeLine1.UTF8String length:writeLine1.length];
+//        NSString *writeLine1 = [NSString stringWithFormat:@"%@, %@, %@\n", [self getCurrentDataString], _percentView.text, _instantRateView.text];
+//        NSData *data1 = [NSData dataWithBytes:writeLine1.UTF8String length:writeLine1.length];
         
-        NSLog(@"%@", writeLine1);
+//        NSLog(@"%@", writeLine1);
         
-        [fileHandle writeData:data1];
-        [fileHandle synchronizeFile];
+//        [fileHandle writeData:data1];
+//        [fileHandle synchronizeFile];
         
-        lastTime = currTime;
-        lastBytesWritten = totalBytesWritten;
-    }
+//        lastTime = currTime;
+//        lastBytesWritten = totalBytesWritten;
+//    }
    
 }
 
