@@ -34,6 +34,7 @@ unsigned int ntry = 0;
 unsigned int tryCount = 0;
 float resolution = 1.0;
 NSFileHandle *fileHandle = nil;
+NSTimer *timer = nil;
 
 @implementation HWViewController
 
@@ -66,6 +67,12 @@ NSFileHandle *fileHandle = nil;
     NSString *strNow = [df stringFromDate:now];
     
     return strNow;
+}
+
+- (void)updateRate:(NSTimer *)timer
+{
+    NSLog(@"%@", [self getCurrentDataString]);
+
 }
 
 - (IBAction)startSession:(id)sender {
@@ -129,6 +136,10 @@ NSFileHandle *fileHandle = nil;
                                                      delegateQueue:[NSOperationQueue mainQueue]];
     // データをファイルとしてダウンロード
     NSURLSessionDownloadTask* task = [session downloadTaskWithURL:url];
+    
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:[_calcRes.text floatValue] target:self                                                                 selector:@selector(updateRate:) userInfo:nil repeats:YES];
+    
     
 
     lastBytesWritten = 0;
@@ -256,6 +267,10 @@ NSFileHandle *fileHandle = nil;
 
 - (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(NSError *)error
 {
+    
+    if ([timer isValid]) {
+        [timer invalidate];
+    }
     
     tryCount--;
     
