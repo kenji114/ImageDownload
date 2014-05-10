@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *instantRateView;
 @property (weak, nonatomic) IBOutlet UILabel *aveRate2View;
 @property (weak, nonatomic) IBOutlet UILabel *generalStatusView;
+@property (weak, nonatomic) IBOutlet UISwitch *logSwitch;
 
 - (IBAction)bkgTapped:(id)sender;
 - (IBAction)startSession:(id)sender;
@@ -93,7 +94,7 @@ float aveRate2 = 0.0;
 
     insRate = (float)(recvCount - lastBytesWritten)*8.0/intervalSinceLast;
     
-    NSString *writeLine1 = [NSString stringWithFormat:@"%@, %lld, %lld, %2.3f %%, %3.1f kbps, %lld, %1.3f\n",
+    NSString *writeLine1 = [NSString stringWithFormat:@"DL: %@, %lld, %lld, %2.3f %%, %3.1f kbps, %lld, %1.3f\n",
                             [self getCurrentDataString],
                             recvCount,
                             totalCount,
@@ -106,8 +107,10 @@ float aveRate2 = 0.0;
     
     NSLog(@"%@", writeLine1);
     
-    [fileHandle writeData:data1];
-    [fileHandle synchronizeFile];
+    if (_logSwitch.on) {
+        [fileHandle writeData:data1];
+        [fileHandle synchronizeFile];
+    }
     
     lastTime = currTime;
     lastBytesWritten = recvCount;
@@ -116,16 +119,18 @@ float aveRate2 = 0.0;
         float intervalFromStart = [currTime timeIntervalSinceDate:startTime];
         float aveRate = (float)totalCount*8/intervalFromStart;
         
-        writeLine1 = [NSString stringWithFormat:@"%@, Ave. Rate: %3.1f kbps, Ave. Rate2: %3.1f kbps\n",
+        writeLine1 = [NSString stringWithFormat:@"DL: %@, Ave. Rate: %3.1f kbps, Ave. Rate2: %3.1f kbps\n",
                       [self getCurrentDataString],
                       aveRate/1000,
                       aveRate2/1000];
         
         data1 = [NSData dataWithBytes:writeLine1.UTF8String length:writeLine1.length];
         NSLog(@"%@", writeLine1);
-
-        [fileHandle writeData:data1];
-        [fileHandle synchronizeFile];
+        
+        if (_logSwitch.on) {
+            [fileHandle writeData:data1];
+            [fileHandle synchronizeFile];
+        }
 
         [session invalidateAndCancel];
     }
@@ -270,32 +275,36 @@ float aveRate2 = 0.0;
     NSString *filename = [NSString stringWithFormat:@"/Documents/%@.txt",currDate];
     //NSLog(@"ファイル名 %@", filename);
     
-    // ホームディレクトリを取得
-    NSString *homeDir = NSHomeDirectory();
-    // 書き込みたいファイルのパスを作成
-    NSString *filePath = [homeDir stringByAppendingPathComponent:filename];
-    // ファイルマネージャを作成
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    // ファイルが存在しないか?
-    if (![fileManager fileExistsAtPath:filePath]) { // yes
-        // 空のファイルを作成する
-        BOOL result = [fileManager createFileAtPath:filePath
-                                           contents:[NSData data] attributes:nil];
-        if (!result) {
-            NSLog(@"ファイルの作成に失敗");
+    if (_logSwitch.on) {
+    
+        // ホームディレクトリを取得
+        NSString *homeDir = NSHomeDirectory();
+        // 書き込みたいファイルのパスを作成
+        NSString *filePath = [homeDir stringByAppendingPathComponent:filename];
+        // ファイルマネージャを作成
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        // ファイルが存在しないか?
+        if (![fileManager fileExistsAtPath:filePath]) { // yes
+            // 空のファイルを作成する
+            BOOL result = [fileManager createFileAtPath:filePath
+                                               contents:[NSData data] attributes:nil];
+            if (!result) {
+                NSLog(@"ファイルの作成に失敗");
+                return;
+            }
+        }
+        
+        // ファイルハンドルを作成する
+        fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
+        if (!fileHandle) {
+            NSLog(@"ファイルハンドルの作成に失敗");
             return;
         }
-    }
-    
-    // ファイルハンドルを作成する
-    fileHandle = [NSFileHandle fileHandleForWritingAtPath:filePath];
-    if (!fileHandle) {
-        NSLog(@"ファイルハンドルの作成に失敗");
-        return;
+        
     }
     
     [self downloadTaskWithDelegate];
-    
+
     
 }
 @end
