@@ -7,6 +7,7 @@
 //
 
 #import "HWViewController.h"
+#import "HWimageUpload.h"
 
 @interface HWViewController () <NSURLSessionDownloadDelegate>
 
@@ -23,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *aveRate2View;
 @property (weak, nonatomic) IBOutlet UILabel *generalStatusView;
 @property (weak, nonatomic) IBOutlet UISwitch *logSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *dlSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *upSwitch;
 
 - (IBAction)bkgTapped:(id)sender;
 - (IBAction)startSession:(id)sender;
@@ -56,6 +59,7 @@ float aveRate2 = 0.0;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.scrollView setContentSize:CGSizeMake(320, 750)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,7 +109,7 @@ float aveRate2 = 0.0;
                             ];
     NSData *data1 = [NSData dataWithBytes:writeLine1.UTF8String length:writeLine1.length];
     
-    NSLog(@"%@", writeLine1);
+//    NSLog(@"%@", writeLine1);
     
     if (_logSwitch.on) {
         [fileHandle writeData:data1];
@@ -148,7 +152,7 @@ float aveRate2 = 0.0;
     dispStartTime = [NSDate date];
     dispLastTime = [NSDate date];
     sessionFinish = false;
-    
+
     
     NSURL* url = [NSURL URLWithString:_URLname.text];
     // NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -159,7 +163,7 @@ float aveRate2 = 0.0;
                                                      delegateQueue:[NSOperationQueue mainQueue]];
         // データをファイルとしてダウンロード
     task = [session downloadTaskWithURL:url];
-
+    
     _progressView.progress = 0;
     _percentView.text = [NSString stringWithFormat:@"%2.1f  %%", 0.0];
     _instantRateView.text = [NSString stringWithFormat:@"%2.1f  kbps", 0.0];
@@ -267,6 +271,9 @@ float aveRate2 = 0.0;
         _generalStatusView.text = @"セッションを開始します。";
     }
     
+    // [HWimageUpload uploadTest];
+    
+    
     ntryMax = [_tryNum.text intValue];
     ntry = 0;
     tryCount = ntryMax;
@@ -303,7 +310,9 @@ float aveRate2 = 0.0;
         
     }
     
-    [self downloadTaskWithDelegate];
+    if (_dlSwitch.on) {
+        [self downloadTaskWithDelegate];
+    }
 
     
 }

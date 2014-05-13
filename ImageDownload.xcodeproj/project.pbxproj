@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BABFC77F192217A8007A754E /* HWimageUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = BABFC77E192217A8007A754E /* HWimageUpload.m */; };
 		BAE6ABA218A121F1008E50F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA118A121F1008E50F1 /* Foundation.framework */; };
 		BAE6ABA418A121F1008E50F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA318A121F1008E50F1 /* CoreGraphics.framework */; };
 		BAE6ABA618A121F1008E50F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE6ABA518A121F1008E50F1 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BABFC77D192217A8007A754E /* HWimageUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWimageUpload.h; sourceTree = "<group>"; };
+		BABFC77E192217A8007A754E /* HWimageUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWimageUpload.m; sourceTree = "<group>"; };
 		BAE6AB9E18A121F1008E50F1 /* ImageDownload.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDownload.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE6ABA118A121F1008E50F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAE6ABA318A121F1008E50F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 				BAE6ABBA18A121F1008E50F1 /* HWViewController.m */,
 				BAE6ABBC18A121F1008E50F1 /* Images.xcassets */,
 				BAE6ABA818A121F1008E50F1 /* Supporting Files */,
+				BABFC77D192217A8007A754E /* HWimageUpload.h */,
+				BABFC77E192217A8007A754E /* HWimageUpload.m */,
 			);
 			path = ImageDownload;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAE6ABBB18A121F1008E50F1 /* HWViewController.m in Sources */,
+				BABFC77F192217A8007A754E /* HWimageUpload.m in Sources */,
 				BAE6ABAE18A121F1008E50F1 /* main.m in Sources */,
 				BAE6ABB218A121F1008E50F1 /* HWAppDelegate.m in Sources */,
 			);
