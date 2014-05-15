@@ -13,6 +13,9 @@
 @property NSString *helloClass;
 
 + (void)uploadTest;
-
-
+- (void)uploadingTestTask:(unsigned int)ntryMaxUL;
+@property unsigned int ntryMaxUL;
 @end
+
+
+

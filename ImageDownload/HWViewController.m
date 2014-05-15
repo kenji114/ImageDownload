@@ -24,8 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *aveRate2View;
 @property (weak, nonatomic) IBOutlet UILabel *generalStatusView;
 @property (weak, nonatomic) IBOutlet UISwitch *logSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *dlSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *upSwitch;
+
 
 - (IBAction)bkgTapped:(id)sender;
 - (IBAction)startSession:(id)sender;
@@ -37,7 +36,7 @@ NSDate *startTime, *lastTime, *currTime;
 NSDate *dispStartTime, *dispLastTime, *dispCurrTime;
 int64_t lastBytesWritten = 0;
 int64_t dispLastBytesWritten = 0;
-unsigned int ntryMax = 1;
+
 unsigned int ntry = 0;
 unsigned int tryCount = 0;
 float resolution = 1.0;
@@ -52,7 +51,7 @@ float aveRate2 = 0.0;
 
 - (void)viewDidLoad
 {
-    _URLname.text = @"http://www.kiriko-sandblast.com/10MB.bin";
+    _URLname.text = @"http://192.168.56.101/100MB.bin";
     _tryNum.text = @"1";
     _Interval.text = @"1";
     _calcRes.text = @"1.0";
@@ -273,10 +272,9 @@ float aveRate2 = 0.0;
     
     // [HWimageUpload uploadTest];
     
-    
-    ntryMax = [_tryNum.text intValue];
+    _ntryMaxDL = [_tryNum.text intValue];
     ntry = 0;
-    tryCount = ntryMax;
+    tryCount = _ntryMaxDL;
     
     NSString *currDate = [self getCurrentDataString];
     NSString *filename = [NSString stringWithFormat:@"/Documents/%@.txt",currDate];
@@ -312,8 +310,13 @@ float aveRate2 = 0.0;
     
     if (_dlSwitch.on) {
         [self downloadTaskWithDelegate];
+    }else if(_upSwitch.on){
+        HWimageUpload *dl = [[HWimageUpload alloc] init];
+        [dl uploadingTestTask:_ntryMaxDL];
+        NSLog(@"--- %d ---", dl.ntryMaxUL);
+    }else{
+        _generalStatusView.text = @"測定項目を指定してください。";
     }
-
-    
 }
+
 @end

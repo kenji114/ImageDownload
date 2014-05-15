@@ -7,12 +7,25 @@
 //
 
 #import "HWimageUpload.h"
+#import "HWViewController.h"
 
 @implementation HWimageUpload
 
 + (void) uploadTest
 {
-    NSLog(@"**** upload test ****");
+    //NSLog(@"**** upload test ****");
+}
+
+- (void)uploadingTestTask:(unsigned int)ntryMaxUL
+{
+
+    _ntryMaxUL = ntryMaxUL;
+    
+    NSLog(@"**** upload test %d ****", ntryMaxUL);
+    
+    
+    
+    
 }
 
 @end

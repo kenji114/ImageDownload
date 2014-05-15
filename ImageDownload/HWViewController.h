@@ -11,5 +11,9 @@
 @interface HWViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property unsigned int ntryMaxDL;
+@property (weak, nonatomic) IBOutlet UISwitch *dlSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *upSwitch;
 
 @end
+
